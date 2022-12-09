@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminWindow</class>
+ <widget class="QMainWindow" name="AdminWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AdminWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>639</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_books">
+     <attribute name="title">
+      <string>Manage Books</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>541</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Add Book</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_add">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>480</y>
+         <width>151</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add Book</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>480</y>
+         <width>361</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:gray;</string>
+       </property>
+       <property name="text">
+        <string>If publisher is new, then adding book will add publisher as well</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>60</y>
+         <width>531</width>
+         <height>401</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>ISBN</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" colspan="4">
+         <widget class="QLineEdit" name="lineEdit_isbn"/>
+        </item>
+        <item row="0" column="5">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Pages</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="6">
+         <widget class="QLineEdit" name="lineEdit_pages"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="4">
+         <widget class="QLineEdit" name="lineEdit_name"/>
+        </item>
+        <item row="1" column="5">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Stock</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="6">
+         <widget class="QLineEdit" name="lineEdit_stock"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Cost</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="4">
+         <widget class="QLineEdit" name="lineEdit_cost"/>
+        </item>
+        <item row="2" column="5">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Price</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="6">
+         <widget class="QLineEdit" name="lineEdit_price"/>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Royalty</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2" colspan="3">
+         <widget class="QLineEdit" name="lineEdit_royalty">
+          <property name="placeholderText">
+           <string> IN  (0, 1)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="5">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Threshold</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="6">
+         <widget class="QLineEdit" name="lineEdit_threshold">
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="4">
+         <widget class="QRadioButton" name="radioButton_new">
+          <property name="text">
+           <string>New Publisher?</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="5">
+         <widget class="QLabel" name="label_17">
+          <property name="text">
+           <string>Choose existing publisher</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="6">
+         <widget class="QComboBox" name="comboBox_publishers"/>
+        </item>
+        <item row="5" column="0" colspan="3">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Publisher Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3" colspan="2">
+         <widget class="QLineEdit" name="lineEdit_pub_name"/>
+        </item>
+        <item row="5" column="5">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Publisher Email</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="6">
+         <widget class="QLineEdit" name="lineEdit_pub_email"/>
+        </item>
+        <item row="6" column="0" colspan="4">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Publisher Address</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="4">
+         <widget class="QLineEdit" name="lineEdit_pub_address"/>
+        </item>
+        <item row="6" column="5">
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Publisher Phone 1</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="6">
+         <widget class="QLineEdit" name="lineEdit_pub_phone1"/>
+        </item>
+        <item row="7" column="0" colspan="4">
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>Publisher Phone 2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="4">
+         <widget class="QLineEdit" name="lineEdit_pub_phone2"/>
+        </item>
+        <item row="7" column="5">
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>Publisher Bank Account</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="6">
+         <widget class="QLineEdit" name="lineEdit_pub_bank"/>
+        </item>
+        <item row="8" column="0" colspan="2">
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>Author1</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2" colspan="3">
+         <widget class="QLineEdit" name="lineEdit_author1"/>
+        </item>
+        <item row="8" column="5">
+         <widget class="QLabel" name="label_19">
+          <property name="text">
+           <string>Author2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0" colspan="2">
+         <widget class="QLabel" name="label_20">
+          <property name="text">
+           <string>Genre1</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="2" colspan="3">
+         <widget class="QLineEdit" name="lineEdit_genre1"/>
+        </item>
+        <item row="9" column="5">
+         <widget class="QLabel" name="label_21">
+          <property name="text">
+           <string>Genre2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="6">
+         <widget class="QLineEdit" name="lineEdit_author2"/>
+        </item>
+        <item row="9" column="6">
+         <widget class="QLineEdit" name="lineEdit_genre2"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>0</y>
+        <width>251</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Remove Book</string>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>241</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Enter the ISBN to remove:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_remove"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_remove">
+          <property name="text">
+           <string>Remove Book</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_report">
+     <attribute name="title">
+      <string>Sales Report</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>10</y>
+        <width>80</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>refresh</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>50</y>
+        <width>761</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_27">
+         <property name="text">
+          <string>Sales vs Expenses</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableView" name="tableView_report">
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>120</number>
+         </attribute>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>210</y>
+        <width>761</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>Sales per genre</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableView" name="tableView_genre_report">
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>130</number>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>Sales per author</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableView" name="tableView_author_report">
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>130</number>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">color:red;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
