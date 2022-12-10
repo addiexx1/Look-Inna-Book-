@@ -3,9 +3,6 @@
 -- User Login --
 SELECT password FROM user WHERE username = username;
 
--- User Signup --
-INSERT INTO user VALUES ('input name','input pw','input fname','input lname','input address');
-
 -- Browse all (TOP 20) books --
 SELECT * FROM table_view;
 

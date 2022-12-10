@@ -90,6 +90,8 @@ INSERT INTO order_book VALUES ('0-8472-7748-8',1,5);
 INSERT INTO order_book VALUES ('0-3774-7473-8',2,5);
 INSERT INTO order_book VALUES ('0-3774-7473-8',3,50);
 
+-- User Signup --
+INSERT INTO user VALUES ('input name','input pw','input fname','input lname','input address');
 -- dml to update tables -- 
 UPDATE book SET stock = ? WHERE ISBN = ? ;
 -- dml to delete rows
