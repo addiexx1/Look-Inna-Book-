@@ -1,0 +1,67 @@
+
+---------------------------------------- DDL ----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS publisher (
+	pub_name	TEXT NOT NULL,
+	address	TEXT NOT NULL,
+	email	TEXT NOT NULL,
+	bank_account	TEXT NOT NULL UNIQUE,
+	PRIMARY KEY(pub_name)
+);
+CREATE TABLE IF NOT EXISTS user (
+	username	TEXT NOT NULL,
+	password	TEXT NOT NULL,
+	fname	TEXT NOT NULL,
+	lname	TEXT NOT NULL,
+	address	TEXT NOT NULL,
+	PRIMARY KEY(username)
+);
+CREATE TABLE IF NOT EXISTS book (
+	ISBN	TEXT NOT NULL,
+	name	TEXT NOT NULL,
+	numPages	INTEGER NOT NULL CHECK(numPages>0),
+	cost	NUMERIC NOT NULL CHECK(cost>=0),
+	price	NUMERIC NOT NULL CHECK(price>=0),
+	stock	INTEGER NOT NULL CHECK(stock>=0),
+	royalty	NUMERIC NOT NULL CHECK(royalty>=0),
+	threshold	INTEGER NOT NULL CHECK(threshold>=0),
+	pub_name	TEXT NOT NULL,
+	total_stocked	INTEGER NOT NULL DEFAULT 0,
+	PRIMARY KEY(ISBN),
+	FOREIGN KEY(pub_name) REFERENCES publisher(pub_name) ON DELETE RESTRICT ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS pub_phone (
+	pub_name	TEXT NOT NULL,
+	phone	TEXT NOT NULL,
+	PRIMARY KEY(pub_name,phone)
+);
+CREATE TABLE IF NOT EXISTS genre (
+	genre	TEXT NOT NULL,
+	ISBN	TEXT NOT NULL,
+	PRIMARY KEY(genre,ISBN),
+	FOREIGN KEY(ISBN) REFERENCES book(ISBN) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS author (
+	author	TEXT NOT NULL,
+	ISBN	TEXT NOT NULL,
+	FOREIGN KEY(ISBN) REFERENCES book(ISBN) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(author,ISBN)
+);
+CREATE TABLE IF NOT EXISTS [order] (
+	order_id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	shipping_address	TEXT NOT NULL,
+	billing_address	TEXT NOT NULL,
+	tracking_info	TEXT NOT NULL DEFAULT 'Order placed',
+	order_date	TEXT NOT NULL DEFAULT CURRENT_DATE,
+	username	TEXT NOT NULL,
+	FOREIGN KEY(username) REFERENCES user(username) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS order_book (
+	ISBN	TEXT NOT NULL,
+	order_id	INTEGER NOT NULL,
+	order_amount	INTEGER NOT NULL CHECK(order_amount>0),
+	FOREIGN KEY(ISBN) REFERENCES book(ISBN) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY(ISBN,order_id),
+	FOREIGN KEY(order_id) REFERENCES [order](order_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
